@@ -1,5 +1,6 @@
 package com.example.les12services.controller;
 
+import com.example.les12services.exception.NameTooLongException;
 import com.example.les12services.exception.ResourceNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,4 +13,12 @@ public class ExceptionController {
     public ResponseEntity<String> handleResourceNotFoundException(ResourceNotFoundException ex) {
         return new ResponseEntity<>(ex.getMessage(), HttpStatus.NOT_FOUND);
     }
+
+    @ExceptionHandler(NameTooLongException.class)
+    public ResponseEntity<String>
+    handleNameTooLongException
+            (NameTooLongException ex) {
+        return new ResponseEntity<>(ex.getMessage(), HttpStatus.BAD_REQUEST);
+    }
+
 }

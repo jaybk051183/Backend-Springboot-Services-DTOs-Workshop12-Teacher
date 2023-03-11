@@ -2,6 +2,7 @@ package com.example.les12services.service;
 
 import com.example.les12services.dto.TeacherDto;
 import com.example.les12services.exception.ConflictException;
+import com.example.les12services.exception.NameTooLongException;
 import com.example.les12services.exception.ResourceNotFoundException;
 import com.example.les12services.model.Teacher;
 import com.example.les12services.repository.TeacherRepository;
@@ -33,8 +34,12 @@ public class TeacherService {
         t.setDob(tdto.dob);
         t.setSalary(tdto.salary);
 
-        repos.save(t);
-
+        try{
+            repos.save(t);
+        }
+        catch (Exception e){
+            throw new NameTooLongException("Lastname is too long");
+        }
         return t.getId();
     }
 

@@ -1,9 +1,6 @@
 package com.example.les12services.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 import java.time.LocalDate;
 
@@ -13,8 +10,8 @@ public class Teacher {
     @Id
     @GeneratedValue
     private Long id;
-
     private String firstName;
+    @Column(length = 3)
     private String lastName;
     private LocalDate dob;
     private int salary;

@@ -10,7 +10,7 @@ public class TeacherDto {
     @NotBlank
     public String firstName;
 
-    @Size(min = 3, max = 255)
+    @Size(min = 3, max = 6)
     public String lastName;
 
     @Past
