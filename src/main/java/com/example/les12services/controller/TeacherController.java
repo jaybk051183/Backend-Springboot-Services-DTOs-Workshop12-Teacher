@@ -25,7 +25,7 @@ public class TeacherController {
 
     private final TeacherService service;
 
-    //The constructor for this class takes an instance of the TeacherService class as a parameter, which will be used to perform operations on teacher data.
+    //Constructor injection: The constructor for this class takes an instance of the TeacherService class as a parameter, which will be used to perform operations on teacher data.
 
     public TeacherController(TeacherService service) {
         this.service = service;

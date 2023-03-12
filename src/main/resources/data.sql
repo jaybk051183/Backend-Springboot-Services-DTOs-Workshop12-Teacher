@@ -1,1 +1,1 @@
-/*insert into teachers(id,first_Name,last_Name,dob) values(nextval('teachers_seq'),'Piet', 'Puk', '1995-01-01');*/
+insert into teachers(id,salary,first_Name,last_Name,dob) values(nextval('teachers_seq'), 80000,'Piet', 'Puk', '1995/01/01');
